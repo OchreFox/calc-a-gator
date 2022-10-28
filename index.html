@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script
+      src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script to render emojis as Twemojis -->
+    <script>
+      window.onload = function () {
+        // Parses the document body and
+        // inserts <img> tags in place of Unicode Emojis
+        twemoji.parse(
+          document.body,
+          { folder: "svg", ext: ".svg" } // This is to specify to Twemoji to use SVGs and not PNGs
+        );
+      };
+    </script>
+    <!-- CSS configurations to tweak how the Twemojis are displayed -->
+    <style>
+      img.emoji {
+        /* Since we are using SVGs, you have to change the width using CSS */
+        width: 1em;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>🐊 Calc-a-gator 🐊</h1>
+      <div class="calculator">
+        <div class="display">
+          <p id="operation">12 + 34</p>
+          <input type="text" id="display" value="46" placeholder="0"></input>
+        </div>
+        <div class="keypad">
+          <button id="left-par">(</button>
+          <button id="right-par">)</button>
+          <button id="percent">%</button>
+          <button id="delete">⬅️</button>
+          <button id="AC">AC</button>
+          <!--  -->
+          <button id="7">7</button>
+          <button id="8">8</button>
+          <button id="9">9</button>
+          <button id="divide">÷</button>
+          <!--  -->
+          <button id="4">4</button>
+          <button id="5">5</button>
+          <button id="6">6</button>
+          <button id="multiply">×</button>
+          <!--  -->
+          <button id="1">1</button>
+          <button id="2">2</button>
+          <button id="3">3</button>
+          <button id="minus">-</button>
+          <!--  -->
+          <button id="0">0</button>
+          <button id="point">.</button>
+          <button id="equals">=</button>
+          <button id="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
